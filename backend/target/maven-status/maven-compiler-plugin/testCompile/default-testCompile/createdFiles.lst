@@ -1,0 +1,5 @@
+com/webbazar/service/UserServiceTest.class
+com/webbazar/service/ProductServiceTest.class
+com/webbazar/service/ProductService.class
+com/webbazar/config/TestSecurityConfig.class
+com/webbazar/controller/ProductIntegrationTest.class

@@ -1,0 +1,19 @@
+{
+  "id": "webbazar-localhost-env",
+  "name": "WebBazar Localhost",
+  "values": [
+    {
+      "key": "base_url",
+      "value": "http://localhost:8080",
+      "enabled": true
+    },
+    {
+      "key": "token",
+      "value": "",
+      "enabled": true
+    }
+  ],
+  "_postman_variable_scope": "environment",
+  "_postman_exported_at": "2025-07-25T14:54:30.278795",
+  "_postman_exported_using": "PostmanJsonGenerator"
+}

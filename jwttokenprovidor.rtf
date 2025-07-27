@@ -1,0 +1,128 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2822
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fmodern\fcharset0 Courier;\f1\fmodern\fcharset0 Courier-Oblique;\f2\fnil\fcharset0 Menlo-Regular;
+\f3\fnil\fcharset0 AppleColorEmoji;}
+{\colortbl;\red255\green255\blue255;\red195\green123\blue90;\red23\green23\blue26;\red174\green176\blue183;
+\red164\green160\blue78;\red185\green101\blue173;\red89\green158\blue96;\red103\green107\blue114;\red38\green157\blue169;
+\red71\green149\blue242;}
+{\*\expandedcolortbl;;\csgenericrgb\c76471\c48235\c35294;\csgenericrgb\c9020\c9020\c10196;\csgenericrgb\c68235\c69020\c71765;
+\csgenericrgb\c64314\c62745\c30588;\csgenericrgb\c72549\c39608\c67843;\csgenericrgb\c34902\c61961\c37647;\csgenericrgb\c40392\c41961\c44706;\csgenericrgb\c14902\c61569\c66275;
+\csgenericrgb\c27843\c58431\c94902;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs26 \cf2 \cb3 package \cf4 com.webbazar.security;\
+\
+\cf2 import \cf4 io.jsonwebtoken.*;\
+\cf2 import \cf4 io.jsonwebtoken.security.Keys;\
+\cf2 import \cf4 org.springframework.stereotype.\cf5 Component\cf4 ;\
+\
+\cf2 import \cf4 jakarta.annotation.\cf5 PostConstruct\cf4 ;\
+\cf2 import \cf4 jakarta.servlet.http.HttpServletRequest;\
+\cf2 import \cf4 javax.crypto.SecretKey;\
+\cf2 import \cf4 java.util.Date;\
+\cf2 import \cf4 java.util.Base64;\
+\cf2 import \cf4 java.util.Set;\
+\cf2 import \cf4 java.util.HashSet;\
+\cf2 import \cf4 java.util.List;\
+\
+\cf5 @Component\
+\cf2 public class \cf4 JwtTokenProvider \{\
+\
+    \cf2 private \cf4 String \cf6 secretKey \cf4 = \cf7 "mySuperSecretKey12345mySuperSecretKey12345"\cf4 ; \cf8 // moet minimaal 256 bits zijn\
+    \cf2 private final long \cf6 validityInMilliseconds \cf4 = \cf9 3600000\cf4 ; \cf8 // 1 uur\
+    \cf2 private \cf4 SecretKey \cf6 key\cf4 ;\
+\
+    \cf5 @PostConstruct\
+    \cf2 protected void \cf10 init\cf4 () \{\
+        \cf2 this\cf4 .\cf6 key \cf4 = Keys.
+\f1\i hmacShaKeyFor
+\f0\i0 (Base64.
+\f1\i getEncoder
+\f0\i0 ().encode(\cf6 secretKey\cf4 .getBytes()));\
+    \}\
+\
+    \cf8 // 
+\f2 \uc0\u9989 
+\f0  Aangepast voor meerdere rollen\
+    \cf2 public \cf4 String \cf10 createToken\cf4 (String email, Set<String> roles) \{\
+        Claims claims = Jwts.
+\f1\i claims
+\f0\i0 ().setSubject(email);\
+        claims.put(\cf7 "roles"\cf4 , roles); \cf8 // 
+\f3 \uc0\u11013 \u65039 
+\f0  gebruik meerdere rollen\
+\
+        \cf4 Date now = \cf2 new \cf4 Date();\
+        Date validity = \cf2 new \cf4 Date(now.getTime() + \cf6 validityInMilliseconds\cf4 );\
+\
+        \cf2 return \cf4 Jwts.
+\f1\i builder
+\f0\i0 ()\
+                .setClaims(claims)\
+                .setIssuedAt(now)\
+                .setExpiration(validity)\
+                .signWith(\cf6 key\cf4 , SignatureAlgorithm.
+\f1\i \cf6 HS256
+\f0\i0 \cf4 )\
+                .compact();\
+    \}\
+\
+    \cf2 public boolean \cf10 validateToken\cf4 (String token) \{\
+        \cf2 try \cf4 \{\
+            Jwts.
+\f1\i parserBuilder
+\f0\i0 ().setSigningKey(\cf6 key\cf4 ).build().parseClaimsJws(token);\
+            \cf2 return true\cf4 ;\
+        \} \cf2 catch \cf4 (JwtException | IllegalArgumentException e) \{\
+            \cf2 return false\cf4 ;\
+        \}\
+    \}\
+\
+    \cf2 public \cf4 String \cf10 getEmailFromToken\cf4 (String token) \{\
+        \cf2 return \cf4 Jwts.
+\f1\i parserBuilder
+\f0\i0 ()\
+                .setSigningKey(\cf6 key\cf4 )\
+                .build()\
+                .parseClaimsJws(token)\
+                .getBody()\
+                .getSubject();\
+    \}\
+\
+    \cf8 // 
+\f2 \uc0\u9989 
+\f0  Haal meerdere rollen op uit token\
+    \cf2 public \cf4 Set<String> \cf10 getRolesFromToken\cf4 (String token) \{\
+        Object raw = Jwts.
+\f1\i parserBuilder
+\f0\i0 ()\
+                .setSigningKey(\cf6 key\cf4 )\
+                .build()\
+                .parseClaimsJws(token)\
+                .getBody()\
+                .get(\cf7 "roles"\cf4 );\
+\
+        \cf2 if \cf4 (raw \cf2 instanceof \cf4 List<?>) \{\
+            List<?> list = (List<?>) raw;\
+            Set<String> roles = \cf2 new \cf4 HashSet<>();\
+            \cf2 for \cf4 (Object obj : list) \{\
+                roles.add(obj.toString());\
+            \}\
+            \cf2 return \cf4 roles;\
+        \}\
+\
+        \cf2 return \cf4 Set.
+\f1\i of
+\f0\i0 (); \cf8 // fallback\
+    \cf4 \}\
+\
+    \cf2 public \cf4 String \cf10 resolveToken\cf4 (HttpServletRequest request) \{\
+        String bearerToken = request.getHeader(\cf7 "Authorization"\cf4 );\
+        \cf2 if \cf4 (bearerToken != \cf2 null \cf4 && bearerToken.startsWith(\cf7 "Bearer "\cf4 )) \{\
+            \cf2 return \cf4 bearerToken.substring(\cf9 7\cf4 );\
+        \}\
+        \cf2 return null\cf4 ;\
+    \}\
+\}\
+\
+}
