@@ -13,7 +13,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 @SpringBootTest
 @AutoConfigureMockMvc
-@Import(TestSecurityConfig.class) // ⬅️ zorgt dat authenticatie wordt uitgezet tijdens tests
+@Import(TestSecurityConfig.class) //  zorgt dat authenticatie wordt uitgezet tijdens tests
 public class ProductIntegrationTest {
 
     @Autowired

@@ -1,4 +1,4 @@
-// 📁 com/webbazar/repository/RoleRepository.java
+//  com/webbazar/repository/RoleRepository.java
 package com.webbazar.repository;
 
 import com.webbazar.model.Role;

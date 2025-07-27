@@ -25,7 +25,7 @@ public class JwtTokenProvider {
         this.key = Keys.hmacShaKeyFor(Base64.getEncoder().encode(secretKey.getBytes()));
     }
 
-    // ✅ Aangepast voor meerdere rollen
+    //  Aangepast voor meerdere rollen
     public String createToken(String email, Set<String> roles) {
         Claims claims = Jwts.claims().setSubject(email);
         claims.put("roles", roles); // ⬅️ gebruik meerdere rollen
@@ -59,7 +59,7 @@ public class JwtTokenProvider {
                 .getSubject();
     }
 
-    // ✅ Haal meerdere rollen op uit token
+    // Haal meerdere rollen op uit token
     public Set<String> getRolesFromToken(String token) {
         Object raw = Jwts.parserBuilder()
                 .setSigningKey(key)
