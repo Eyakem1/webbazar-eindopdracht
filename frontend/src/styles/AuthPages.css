@@ -1,0 +1,104 @@
+/* Auth pagina */
+.auth-page {
+    max-width: 420px;
+    margin: 28px auto;
+    background: #fff;
+    padding: 20px 22px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+/* Login titel */
+.auth-page h1 {
+    color: #FD7E14;
+}
+
+/* Formulier */
+.auth-form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.auth-form label {
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+.auth-form input,
+.auth-form select,
+.auth-form button {
+    font-size: 0.95rem;
+}
+
+.auth-form input,
+.auth-form select {
+    padding: 10px 12px;
+    border: 1px solid #cfcfcf;
+    border-radius: 8px;
+    background: #fafafa;
+    transition: border-color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+}
+
+.auth-form input:focus,
+.auth-form select:focus {
+    outline: none;
+    border-color: #1e90ff;
+    background: #ffffff;
+    box-shadow: 0 0 0 3px rgba(30,144,255,0.15);
+}
+
+/* actie-knop (inloggen/registreren) */
+.auth-form button[type="submit"] {
+    background: #1e90ff;
+    color: #fff;
+    border: none;
+    padding: 10px 14px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background 0.2s ease, transform 0.02s ease;
+}
+
+.auth-form button[type="submit"]:hover {
+    background: #0f78d4;
+}
+
+.auth-form button[type="submit"]:active {
+    transform: translateY(1px);
+}
+
+/* Secundaire acties */
+.auth-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 6px;
+    gap: 8px;
+}
+
+.auth-actions a {
+    color: #1e90ff;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+.auth-actions a:hover {
+    text-decoration: underline;
+}
+
+/* Feedback */
+.error {
+    color: #c62828;
+    background: #fdecec;
+    border: 1px solid #fac6c6;
+    padding: 8px 10px;
+    border-radius: 8px;
+    font-size: 0.92rem;
+}
+
+.hint {
+    opacity: 0.9;
+    font-size: 0.9rem;
+    margin-top: 6px;
+    color: #555;
+}

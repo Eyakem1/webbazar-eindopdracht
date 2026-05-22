@@ -1,0 +1,133 @@
+/* Titel boeken  */
+.products-page h1 {
+    color: #FD7E14 !important;
+}
+
+/* Container van de productenpagina  */
+.products-page {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    min-height: 2000px;
+}
+
+/* Productenpagina filterbalk */
+.products-page .filter {
+    width: 100%;
+    max-width: 520px;
+    margin: 12px 0 22px;
+    display: flex;
+    gap: 10px;
+}
+
+.products-page .filter input {
+    flex: 1;
+    padding: 10px 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background: #fafafa;
+    font-size: 0.95rem;
+    transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+.products-page .filter input:focus {
+    outline: none;
+    border-color: #1976d2;
+    background: #fff;
+}
+
+/* Grid met kaarten  */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 14px;
+
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+
+    justify-content: center;
+    justify-items: center;
+}
+
+/* Kaart */
+.card {
+    background: #fff;
+    border-radius: 10px;
+    text-decoration: none;
+    color: #222;
+    border: 1px solid #eee;
+    overflow: hidden;
+    transition: transform .12s ease, box-shadow .12s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+}
+
+.card-img {
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    object-fit: cover;
+}
+
+.card-info {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.card-title {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.card-author {
+    margin: 0;
+    color: #2563eb;
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+.card-prices {
+    display: flex;
+    gap: 12px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    flex-wrap: wrap;
+}
+
+.price-buy { color: #1e90ff; }
+.price-rent { color: #2e7d32; }
+
+.card-actions {
+    margin-top: 8px;
+    display: flex;
+    gap: 10px;
+}
+
+/*  button- */
+.small-btn {
+    all: unset;
+}
+
+.btn.btn-blue {}
+.btn.btn-green {}
+
+/* Responsief */
+@media (max-width: 600px) {
+    .grid {
+        grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+        max-width: 100%;
+    }
+}

@@ -1,0 +1,36 @@
+##################
+# OS / macOS
+##################
+.DS_Store
+**/.DS_Store
+__MACOSX/
+
+##################
+# IDE
+##################
+.idea/
+.vscode/
+*.iml
+
+##################
+# Node / Frontend
+##################
+node_modules/
+dist/
+build/
+.next/
+.cache/
+
+##################
+# Java / Backend
+##################
+target/
+*.log
+*.tmp
+
+##################
+# Databases / runtime
+##################
+*.mv.db
+*.trace.db
+*.db

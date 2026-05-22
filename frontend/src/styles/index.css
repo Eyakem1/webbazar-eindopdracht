@@ -1,0 +1,90 @@
+:root {
+    --bg: #DFDFDF;
+    --dark: #111;
+    --footer: #EEEEEE;
+    --blue: #1976d2;
+    --green: #2e7d32;
+    --red: #c62828;
+
+    --text: #222;
+    --border: #ccc;
+    --shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    font-family: system-ui, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text, #222);
+    line-height: 1.5;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+
+.content {
+    min-height: calc(100vh - 120px);
+    padding: 16px 20px;
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    background: var(--blue);
+    color: #fff;
+    font-weight: 600;
+    transition: background 0.2s ease, transform 0.04s ease, filter 0.2s ease;
+    user-select: none;
+}
+.btn:hover { filter: brightness(1.06); }
+.btn:active { transform: translateY(1px); }
+.btn:disabled { opacity: 0.6; cursor: not-allowed; }
+
+.btn-green { background: var(--green); }
+.btn-blue  { background: var(--blue); }
+.btn-red   { background: var(--red); }
+
+.small { padding: 6px 10px; font-size: 0.9rem; }
+
+/* Form elements */
+input, textarea, select {
+    padding: 8px;
+    border: 1px solid var(--border, #ccc);
+    border-radius: 6px;
+    background: #fafafa;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+    font: inherit;
+}
+input:focus, textarea:focus, select:focus {
+    outline: none;
+    border-color: var(--blue);
+    background: #fff;
+    box-shadow: 0 0 0 3px rgba(25,118,210,0.18);
+}
+
+label { margin-right: 8px; display: inline-block; }
+
+/* Headings */
+h1 { margin-top: 0; }
+
+/* Toegankelijkheid: betere keyboard focus overal */
+:focus-visible {
+    outline: 2px solid rgba(25,118,210,0.85);
+    outline-offset: 2px;
+}
+
+/* Minder animatie voor toegankelijkheid */
+@media (prefers-reduced-motion: reduce) {
+    * { transition: none !important; }
+}

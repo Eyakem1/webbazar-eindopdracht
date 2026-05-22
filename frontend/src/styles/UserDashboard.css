@@ -1,0 +1,125 @@
+
+.dashboard-page {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem 3rem;
+}
+
+.dashboard-header {
+    margin-bottom: 1.5rem;
+}
+
+/* Titel */
+.dashboard-header h1 {
+    color: #FD7E14;
+}
+
+.dashboard-grid {
+    display: grid;
+    gap: 1.5rem;
+    align-items: flex-start;
+}
+
+@media (min-width: 900px) {
+    .dashboard-grid {
+        grid-template-columns: 1.1fr 1.2fr;
+    }
+}
+
+.card {
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 1.5rem 1.75rem;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.06);
+    border: 1px solid #e5e5e5;
+}
+
+/* vaste kaart */
+.card-fixed {
+    max-width: 480px;
+}
+
+/* profiel-formulier */
+
+.profile-form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
+}
+
+/* knoppen centreren bovenaan/bij bestellingen */
+.action-button-center {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+/* knopen */
+.action-button-center button,
+.action-button-center a {
+    font-size: 0.95rem;
+    padding: 0.45rem 1.2rem;
+}
+
+.profile-center-button {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+.edit-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: .5rem;
+}
+
+.form-row label {
+    display: flex;
+    flex-direction: column;
+    font-size: .9rem;
+    gap: .25rem;
+}
+
+.profile-form input {
+    padding: .5rem .6rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+.message-error {
+    background: #ffe5e5;
+    padding: .5rem;
+    border-radius: 6px;
+    color: #b00020;
+}
+
+.message-success {
+    background: #dcfce7;
+    padding: .5rem;
+    border-radius: 6px;
+    color: #15803d;
+}
+
+.dashboard-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+}
+
+.dashboard-table th,
+.dashboard-table td {
+    padding: 0.5rem 0.75rem;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.dashboard-table thead {
+    background: #f3f4f6;
+}
+
+.muted {
+    color: #6b7280;
+    font-size: .9rem;
+}

@@ -1,0 +1,234 @@
+/* Achtergrond */
+html, body {
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+    min-height: 100%;
+}
+
+/* Root/container */
+#root {
+    min-height: 100vh;
+    background-color: #f5f5f5;
+}
+
+/* Hoofdpagina */
+.homepage {
+    padding: 2rem;
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    min-height: calc(100vh - 120px);
+}
+
+/* Algemene blokken */
+.intro,
+.quicklinks,
+.info-box {
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+/* Intro 2 kolommen */
+.intro {
+    max-width: 1100px;
+    width: 100%;
+    background: transparent;
+    box-shadow: none;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 2rem;
+    margin: 0 auto;
+}
+
+/* Tekst */
+.intro-text {
+    flex: 1;
+    text-align: left;
+    padding-top: 6px;
+}
+
+.intro-text h1 {
+    margin-top: 0;
+    color: #FD7E14;
+}
+
+/* Afbeelding  */
+.intro-image {
+    flex: 1;
+    width: clamp(300px, 38vw, 460px);
+    height: auto;
+    border-radius: 12px;
+    object-fit: cover;
+}
+
+/* CTA-knoppen */
+.cta-row {
+    display: flex;
+    gap: 18px;
+    margin-top: 16px;
+}
+
+.btn-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 26px;
+    border-radius: 999px;
+    text-decoration: none;
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #fff;
+    transition: 0.15s ease;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.btn-blue {
+    background: linear-gradient(180deg, #2196f3 0%, #0d6efd 90%);
+    box-shadow: 0 4px 12px rgba(33,150,243,0.35);
+}
+.btn-blue:hover {
+    filter: brightness(1.07);
+    box-shadow: 0 8px 18px rgba(33,150,243,0.45);
+}
+
+.btn-green {
+    background: linear-gradient(180deg, #2ecc71 0%, #238636 90%);
+    box-shadow: 0 4px 12px rgba(46,204,113,0.35);
+}
+.btn-green:hover {
+    filter: brightness(1.07);
+    box-shadow: 0 8px 18px rgba(46,204,113,0.45);
+}
+
+/* Top 5 sectie */
+.top5 {
+    width: 100%;
+    max-width: 1100px;
+    margin: 22px auto 0;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    padding: 18px 22px 22px;
+}
+
+.top5 h2 {
+    margin: 0 0 14px;
+    color: #FD7E14;
+    font-size: 1.9rem;
+}
+
+/* Grid met 5 kaarten */
+.top5-grid {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(160px, 1fr));
+    gap: 14px;
+    justify-content: center;
+
+}
+
+.top5-card {
+    display: block;
+    background: #fff;
+    border-radius: 10px;
+    text-decoration: none;
+    color: #222;
+    border: 1px solid #eee;
+    overflow: hidden;
+    transition: transform .12s ease, box-shadow .12s ease;
+}
+
+.top5-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+}
+
+.top5-card img {
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    object-fit: cover;
+    display: block;
+}
+
+.top5-info {
+    padding: 10px;
+}
+
+.top5-info h3 {
+    margin: 0 0 6px;
+    font-size: 1rem;
+}
+
+.top5-info .top5-author {
+    margin: 0 0 8px;
+    color: #2563eb;
+    font-weight: 600;
+}
+
+/* Prijs-knoppen in Top 5 */
+.top5-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 8px;
+}
+
+/* Compacte knop voor prijs/actie */
+.btn-price {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 14px;
+    min-width: 120px;
+    border-radius: 999px;
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #fff;
+    transition: 0.15s ease;
+    white-space: nowrap;
+}
+
+/* kleurstijlen */
+.btn-price.btn-blue {
+    background: linear-gradient(180deg, #2196f3 0%, #0d6efd 90%);
+    box-shadow: 0 4px 12px rgba(33,150,243,0.35);
+}
+.btn-price.btn-blue:hover {
+    filter: brightness(1.07);
+    box-shadow: 0 8px 18px rgba(33,150,243,0.45);
+}
+
+.btn-price.btn-green {
+    background: linear-gradient(180deg, #2ecc71 0%, #238636 90%);
+    box-shadow: 0 4px 12px rgba(46,204,113,0.35);
+}
+.btn-price.btn-green:hover {
+    filter: brightness(1.07);
+    box-shadow: 0 8px 18px rgba(46,204,113,0.45);
+}
+
+.quicklinks {
+    width: 280px;
+    padding: 1.5rem;
+    background: #fff;
+}
+.quicklinks ul { list-style: none; padding: 0; margin: 0; }
+.quicklinks a { color: #1976d2; text-decoration: none; }
+.quicklinks a:hover { text-decoration: underline; }
+
+.info-box p { margin: 0.5rem 0 0; color: #444; }
+
+/* Responsief */
+@media (max-width: 1024px) {
+    .top5-grid { grid-template-columns: repeat(4, 1fr); }
+}
+@media (max-width: 768px) {
+    .intro { flex-direction: column; align-items: flex-start; }
+    .intro-image { width: 90%; max-width: 420px; }
+    .cta-row { flex-direction: column; }
+    .top5-grid { grid-template-columns: repeat(2, 1fr); }
+}

@@ -1,0 +1,170 @@
+/* Checkout pagina */
+.checkout {
+    max-width: 720px;
+    margin: 24px auto;
+    background: #fff;
+    padding: 22px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+/* Succes-bericht na checkout */
+.success-message {
+    margin-bottom: 12px;
+    padding: 10px 12px;
+    border-radius: 8px;
+    border: 1px solid #7ac27a;
+    background: #e8f9e8;
+    color: #2e7d32;
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+
+/* Foutbericht/Error */
+.error {
+    margin-top: 8px;
+    color: #c0392b;
+    font-size: 0.9rem;
+}
+
+/* Winkelmand lijst */
+.cart-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 14px;
+}
+
+.cart-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+    font-size: 0.95rem;
+}
+
+.cart-list li:last-child {
+    border-bottom: none;
+}
+
+/* Samenvatting (totaal, knop, etc.) */
+.summary {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 14px;
+    margin-top: 16px;
+    padding-top: 10px;
+    border-top: 1px solid #eee;
+}
+
+.summary .total {
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.summary .actions {
+    display: flex;
+    gap: 10px;
+}
+
+/* Formuliergedeelte in checkout  */
+.checkout form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 14px;
+}
+
+.checkout label {
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.checkout input,
+.checkout select {
+    padding: 8px 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background: #fafafa;
+    font-size: 0.95rem;
+    transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+.checkout input:focus,
+.checkout select:focus {
+    outline: none;
+    border-color: #1e90ff;
+    background: #fff;
+}
+
+/* Bericht bij lege winkelmand of fout */
+.cart-empty {
+    text-align: center;
+    color: #555;
+    opacity: 0.8;
+    margin: 20px 0;
+    font-style: italic;
+}
+
+/*  winkelmand items */
+
+.cart-item-left {
+    display: flex;
+    flex-direction: column;
+}
+
+.cart-item-title {
+    font-weight: 600;
+}
+
+.cart-item-type {
+    font-size: 0.9rem;
+    opacity: 0.7;
+}
+
+.cart-item-right {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.cart-quantity {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.cart-qty-btn {
+    padding: 2px 8px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    background: #f5f5f5;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+.cart-qty-btn:disabled {
+    opacity: 0.5;
+    cursor: default;
+}
+
+.cart-qty-value {
+    min-width: 24px;
+    text-align: center;
+    font-weight: 500;
+}
+
+.cart-remove-btn {
+    padding: 4px 10px;
+    border: none;
+    border-radius: 6px;
+    background: #e74c3c;
+    color: #fff;
+    cursor: pointer;
+    font-size: 0.85rem;
+}
+
+.cart-remove-btn:hover {
+    background: #c0392b;
+}

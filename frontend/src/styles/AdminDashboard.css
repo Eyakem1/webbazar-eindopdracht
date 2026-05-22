@@ -1,0 +1,29 @@
+/* Oranje titel */
+.admin-title-colored {
+    color: #ff9800;
+    font-size: 2.4rem;
+    margin-bottom: 1.5rem;
+}
+
+/* Knoppen layout */
+.admin-button-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+/* Knoppen styling  */
+.admin-btn {
+    padding: 12px 20px;
+    font-size: 1.1rem;
+    border-radius: 6px;
+}
+
+/* Zorg dat de oranje knop bestaat */
+.btn-orange {
+    background: #ff9800;
+    color: #fff;
+}
+.btn-orange:hover {
+    filter: brightness(1.1);
+}

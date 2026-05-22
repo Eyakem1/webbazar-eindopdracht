@@ -1,0 +1,35 @@
+/* Footer */
+.footer {
+    background: #eeeeee;
+    padding: 18px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: none;
+    box-shadow: none;
+    font-size: 0.95rem;
+    color: #333;
+}
+
+/* Tekstgedeelte links */
+.footer p {
+    margin: 0;
+    opacity: 0.85;
+}
+
+/* Linkgedeelte rechts */
+.footer .links {
+    display: flex;
+    gap: 12px;
+}
+
+.footer .links a {
+    color: #1e90ff;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.footer .links a:hover {
+    color: #0f78d4;
+    text-decoration: underline;
+}

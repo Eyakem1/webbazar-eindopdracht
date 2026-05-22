@@ -1,0 +1,176 @@
+/* Orders pagina */
+.orders {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 24px 16px 32px;
+}
+
+/* Titel */
+.orders h1 {
+    margin: 0 0 16px;
+    color: #FD7E14;
+    font-size: 1.8rem;
+}
+
+/* Bericht als er geen orders zijn of bij error */
+.orders-empty {
+    text-align: center;
+    color: #555;
+    margin-top: 24px;
+}
+
+.orders-error {
+    max-width: 900px;
+    margin: 24px auto;
+    padding: 12px 16px;
+    border-radius: 8px;
+    background: #ffe5e5;
+    color: #b00020;
+    font-weight: 500;
+}
+
+/* Order kaart */
+.order-card {
+    background: #fff;
+    padding: 18px 20px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    margin-bottom: 14px;
+    transition: box-shadow 0.2s ease, transform 0.1s ease;
+}
+
+/* hover effect */
+.order-card:hover {
+    box-shadow: 0 3px 10px rgba(0,0,0,0.12);
+    transform: translateY(-1px);
+}
+
+/* Bovenste balk met ID / datum / status */
+.order-card .head {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 10px;
+}
+
+.order-card .head h3 {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+/* Rechts in de kop: datum + status */
+.head-meta {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 4px;
+    font-size: 0.9rem;
+}
+
+.order-date {
+    color: #555;
+}
+
+/* Basis status-badge */
+.order-card .status {
+    font-size: 0.85rem;
+    font-weight: 500;
+    padding: 4px 8px;
+    border-radius: 6px;
+    background: #eee;
+    color: #444;
+}
+
+/* Verschillende statuskleuren */
+.order-card .status.paid {
+    background: #c8e6c9;
+    color: #2e7d32;
+}
+.order-card .status.pending {
+    background: #fff3cd;
+    color: #b8860b;
+}
+.order-card .status.cancelled {
+    background: #ffcdd2;
+    color: #c62828;
+}
+
+/* Inhoud van de bestelling */
+.order-items {
+    list-style: none;
+    margin: 0;
+    padding: 10px 0 0;
+    border-top: 1px solid #eee;
+}
+
+.order-items li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 6px 0;
+    border-bottom: 1px solid #f2f2f2;
+}
+
+.order-items li:last-child {
+    border-bottom: none;
+}
+
+/* Linkerkant: titel + meta */
+.order-item-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.order-item-title {
+    font-weight: 600;
+    color: #111827;
+}
+
+.order-item-meta {
+    font-size: 0.9rem;
+    color: #4b5563;
+}
+
+/* Download-knop*/
+.order-download-btn {
+    font-size: 0.9rem;
+    padding-inline: 14px;
+}
+
+/* Totaalregel onderaan */
+.order-total {
+    text-align: right;
+    font-weight: 600;
+    margin-top: 10px;
+    font-size: 1rem;
+    color: #111827;
+}
+
+/* Responsive tweaks */
+@media (max-width: 600px) {
+    .order-card {
+        padding: 16px 14px;
+    }
+
+    .order-card .head {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6px;
+    }
+
+    .head-meta {
+        align-items: flex-start;
+    }
+
+    .order-items li {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6px;
+    }
+
+    .order-total {
+        font-size: 0.95rem;
+    }
+}

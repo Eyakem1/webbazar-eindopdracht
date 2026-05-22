@@ -1,0 +1,70 @@
+.product-item {
+    width: 200px;
+    padding: 1rem;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    text-align: center;
+    transition: transform 0.2s ease;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.product-item:hover {
+    transform: scale(1.03);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.product-item__image {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    margin-bottom: 10px;
+    border-radius: 6px;
+}
+
+.product-item__title {
+    font-size: 1.1rem;
+    margin: 0.5rem 0;
+    font-weight: 600;
+}
+
+.product-item__price {
+    color: #007b5e;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.product-item__actions {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+}
+
+.product-item__actions button {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 0.9rem;
+    transition: background-color 0.2s ease;
+}
+
+.koop {
+    background-color: #007bff;
+    color: white;
+}
+
+.koop:hover {
+    background-color: #0056b3;
+}
+
+.huur {
+    background-color: #28a745;
+    color: white;
+}
+
+.huur:hover {
+    background-color: #1e7e34;
+}
